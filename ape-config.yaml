@@ -1,0 +1,4 @@
+name: ape-demo-starknet
+plugins:
+  - starknet
+  - cairo
