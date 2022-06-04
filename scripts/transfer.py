@@ -8,4 +8,4 @@ def main():
     argent_acct = accounts.load("argentx0")
     print(argent_acct.balance)
 
-    acct.transfer(argent_acct, "100 gwei")
+    argent_acct.transfer(acct, "900 gwei")

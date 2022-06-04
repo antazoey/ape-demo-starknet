@@ -4,6 +4,7 @@
 from starkware.cairo.common.cairo_builtins import HashBuiltin
 from starkware.cairo.common.bool import TRUE, FALSE
 
+
 # Define a storage variable.
 @storage_var
 func balance() -> (res : felt):

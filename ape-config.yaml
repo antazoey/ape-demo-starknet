@@ -10,3 +10,13 @@ deployments:
     testnet:
       - contract_type: Bank
         address: 0x6057d257487D3f20c2B2086497C67698F8f9676070Dc383D0711Bcb3d58eD8d
+
+dependencies:
+  - name: OpenZeppelinCairo
+    github: OpenZeppelin/cairo-contracts
+    version: 0.1.0
+    contracts_folder: src
+
+cairo:
+  dependencies:
+    - OpenZeppelinCairo@0.1.0
