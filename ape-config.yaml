@@ -2,21 +2,29 @@ name: ape-demo-starknet
 plugins:
   - name: starknet
   - name: cairo
+  - name: hardhat
 
 default_ecosystem: starknet
+
+ethereum:
+  local:
+    default_provider: hardhat
+
+hardhat:
+  port: 8555  # To not conflict with starknet-devnet
 
 deployments:
   starknet:
     testnet:
       - contract_type: Bank
-        address: 0x6057d257487D3f20c2B2086497C67698F8f9676070Dc383D0711Bcb3d58eD8d
+        address: 0x07b8b17716F1294E1cd402bca0c8328aA6cC26547BCebf53198C95E97Df0d075
 
-dependencies:
-  - name: OpenZeppelinCairo
-    github: OpenZeppelin/cairo-contracts
-    version: 0.1.0
-    contracts_folder: src
+# dependencies:
+#   - name: OpenZeppelinCairo
+#     github: OpenZeppelin/cairo-contracts
+#     version: 0.1.0
+#     contracts_folder: src
 
-cairo:
-  dependencies:
-    - OpenZeppelinCairo@0.1.0
+# cairo:
+#   dependencies:
+#     - OpenZeppelinCairo@0.1.0

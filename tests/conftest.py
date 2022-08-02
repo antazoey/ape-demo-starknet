@@ -1,18 +1,15 @@
 import pytest
-from ape import accounts
+import ape
+
+
+"""Accounts can still be session-scoped"""
 
 
 @pytest.fixture(scope="session")
-def account():
-    container = accounts.containers["starknet"]
-    return container.deploy_account("TEST")
+def eth_account(accounts):
+    return accounts[0]
 
 
 @pytest.fixture(scope="session")
-def bank_contract_type(project):
-    return project.Bank
-
-
-@pytest.fixture(scope="session")
-def bank(bank_contract_type):
-    return bank_contract_type.deploy()
+def stark_account():
+    return ape.accounts.containers["starknet"].test_accounts[0]

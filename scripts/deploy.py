@@ -23,6 +23,10 @@ def starknet_network_option():
 def cli(cli_ctx, network):
     _ = network  # Used by NetworkBoundCommand
     contract = cli_ctx.project_manager.Bank
-    #logger.info(f"Deploying {contract.name} ...")
     bank = contract.deploy()
-    click.echo(bank)
+
+    # Initialize
+    account = cli_ctx.account_manager.load("argentx")
+    # account.unlock("123")
+    # account.set_autosign(True)
+    bank.initialize(sender=account)
