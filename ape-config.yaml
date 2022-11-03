@@ -17,14 +17,14 @@ deployments:
   starknet:
     testnet:
       - contract_type: Bank
-        address: 0x07b8b17716F1294E1cd402bca0c8328aA6cC26547BCebf53198C95E97Df0d075
+        address: 0x0396Bc02bbD29EF746cE064749FFf32CD5Ca679aDce5c831cA8373cF260989c6
 
-# dependencies:
-#   - name: OpenZeppelinCairo
-#     github: OpenZeppelin/cairo-contracts
-#     version: 0.1.0
-#     contracts_folder: src
+dependencies:
+  - name: OpenZeppelinCairo
+    github: OpenZeppelin/cairo-contracts
+    version: 0.5.0
+    contracts_folder: src
 
-# cairo:
-#   dependencies:
-#     - OpenZeppelinCairo@0.1.0
+cairo:
+  dependencies:
+    - OpenZeppelinCairo@0.5.0

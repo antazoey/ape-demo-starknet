@@ -1,6 +1,6 @@
 from ape import accounts, config, networks, project
-from ape.logging import logger
 from ape.api.networks import LOCAL_NETWORK_NAME
+from ape.logging import logger
 
 
 def main():

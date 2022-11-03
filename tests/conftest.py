@@ -1,6 +1,5 @@
-import pytest
 import ape
-
+import pytest
 
 """Accounts can still be session-scoped"""
 
@@ -12,4 +11,5 @@ def eth_account(accounts):
 
 @pytest.fixture(scope="session")
 def stark_account():
-    return ape.accounts.containers["starknet"].test_accounts[0]
+    with ape.networks.starknet.local.use_provider("starknet"):
+        return ape.accounts.containers["starknet"].test_accounts[0]

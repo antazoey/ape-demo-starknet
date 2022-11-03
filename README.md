@@ -15,29 +15,18 @@ To run the tests, do:
 ape test
 ```
 
-To interact with the Bank contract in the `console`, first launch the console:
-
-```bash
-ape console
-```
-
-The default network provider is `starknet-devnet`, so accounts you deploy will not persist.
-
-Deploy an ephemeral account by doing the following:
+To deploy the `Bank` contract in a script or `ape console` session, do:
 
 ```python
-In [1]: account = accounts.containers["starknet"].deploy_account("Temp")
-```
+from ape import accounts, project
 
-Then, deploy the Bank contract:
-
-```python
-In [2]: bank = project.Bank.deploy(sender=account)
-SUCCESS: Contract 'Bank' deployed to: 0x5685DCE3F9c319B7B62F80421eB9db19C5DbC878616af504f825377Ce973e7f
+account = accounts.containers["starknet"].test_accounts[0]
+bank = project.Bank.deploy(sender=account)
 ```
 
 Now, try to interact with it:
 
 ```python
-
+bank.initialize(sender=account)
+bank.increase_balance(200, sender=account)
 ```

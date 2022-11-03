@@ -23,6 +23,9 @@ def test_increase_balance(stark_contract, stark_account):
 
 def test_increase_balance_emits_event(stark_contract, stark_account):
     receipt = stark_contract.increase_balance(200, sender=stark_account)
-    events = [e for e in receipt.decode_logs(stark_contract.balance_increased)]
+    events = list(receipt.decode_logs(stark_contract.balance_increased))
     assert len(events) == 1
     assert events[0].amount == 200
+
+    transfer_events = list(receipt.decode_logs(stark_contract.Transfer))
+    assert len(transfer_events) == 2
