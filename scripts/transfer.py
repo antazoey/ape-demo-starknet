@@ -1,11 +1,12 @@
 from ape import accounts
+from rich import print as printr
 
 
 def main():
     acct = accounts.load("janeway")
-    print(acct.balance)
+    printr(acct.balance)
 
     # argent_acct = accounts.load("janeway")
-    # # print(argent_acct.balance)
+    # # printr(argent_acct.balance)
 
     # argent_acct.transfer(acct, everything)

@@ -1,7 +1,7 @@
 from ape import accounts, config, networks, project
 from ape.api.networks import LOCAL_NETWORK_NAME
 from ape.logging import logger
-from rich import print
+from rich import print as printr
 
 
 def main():
@@ -25,10 +25,10 @@ def main():
 
     # There should not be any transfer logs
     transfer_logs = list(receipt.decode_logs(bank.Transfer))
-    print(f"\n***********\nFound {len(transfer_logs)} Transfer logs:")
+    printr(f"\n***********\nFound {len(transfer_logs)} Transfer logs:")
     for log in transfer_logs:
-        print(f"\n\tSender={log.from_},\n\tReceiver={log.to},\n\tValue={log.value}.\n")
-    print("\n***********\n")
+        printr(f"\n\tSender={log.from_},\n\tReceiver={log.to},\n\tValue={log.value}.\n")
+    printr("\n***********\n")
 
     amount = 20
     logger.info(f"Increasing balance by {amount}...")

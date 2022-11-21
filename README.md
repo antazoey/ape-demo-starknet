@@ -21,6 +21,7 @@ To deploy the `Bank` contract in a script or `ape console` session, do:
 from ape import accounts, project
 
 account = accounts.containers["starknet"].test_accounts[0]
+account.declare(project.Bank)
 bank = project.Bank.deploy(sender=account)
 ```
 
