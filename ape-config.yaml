@@ -3,6 +3,9 @@ plugins:
   - name: starknet
   - name: cairo
   - name: hardhat
+  - name: vyper
+  - name: arbitrum
+  - name: fantom
 
 default_ecosystem: starknet
 
