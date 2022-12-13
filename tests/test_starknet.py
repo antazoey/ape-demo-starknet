@@ -10,7 +10,8 @@ def connection(networks):
 
 @pytest.fixture(scope="module")
 def stark_contract(project, stark_account):
-    contract = project.Bank.deploy()
+    stark_account.declare(project.Bank)
+    contract = project.Bank.deploy(sender=stark_account)
     contract.initialize(sender=stark_account)
     return contract
 
