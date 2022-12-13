@@ -12,7 +12,8 @@ def eth_contract(networks, project, eth_account):
 @pytest.fixture(scope="module")
 def stark_contract(networks, project, stark_account):
     with networks.parse_network_choice("starknet:local"):
-        contract = project.Bank.deploy()
+        stark_account.declare(project.Bank)
+        contract = project.Bank.deploy(sender=stark_account)
         contract.initialize(sender=stark_account)
         yield contract
 
