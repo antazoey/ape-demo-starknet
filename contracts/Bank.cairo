@@ -14,12 +14,25 @@ func balance() -> (res: felt) {
 func is_initialized() -> (initialized: felt) {
 }
 
+@storage_var
+func owner() -> (res: felt) {
+}
+
+
 @event
 func balance_increased(amount: felt) {
 }
 
 @event
 func Transfer(from_: felt, to: felt, value: Uint256) {
+}
+
+@constructor
+func constructor{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
+    initial_supply: Uint256, _owner: felt
+) {
+    owner.write(_owner);
+    return ();
 }
 
 @external

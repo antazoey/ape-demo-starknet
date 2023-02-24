@@ -28,7 +28,8 @@ def cli(cli_ctx, network):
 
     contract = cli_ctx.project_manager.Bank
     account.declare(contract)
-    bank = contract.deploy(sender=account)
+
+    bank = contract.deploy(234, account, sender=account)
 
     # Initialize
     bank.initialize(sender=account)
