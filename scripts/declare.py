@@ -1,7 +1,8 @@
-from ape import networks, project
-from click import echo
+import ape
+import click
 
 
 def main():
-    class_hash = networks.provider.declare(project.BigCairo)
-    echo(class_hash)
+    account = ape.accounts.containers["starknet"].test_accounts[0]
+    class_hash = account.declare(ape.project.storage)
+    click.echo(class_hash)

@@ -1,0 +1,6 @@
+[package]
+name = "ape_demo_starknet"
+version = "0.1.0"
+
+[dependencies]
+cairo = "0.1.0-alpha.4"

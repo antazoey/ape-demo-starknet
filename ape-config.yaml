@@ -31,3 +31,7 @@ dependencies:
 cairo:
   dependencies:
     - OpenZeppelinCairo@0.5.0
+
+starknet:
+  provider:
+    cairo_compiler_manifest: ~/RustProjects/cairo/Cargo.toml 
